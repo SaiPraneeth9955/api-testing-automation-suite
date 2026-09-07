@@ -1,0 +1,29 @@
+{
+  "name": "api-testing-automation-suite",
+  "version": "1.0.0",
+  "description": "Enterprise-grade REST API Test Automation Suite using Postman, Newman, and GitHub Actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run collections/Restful_Booker_API_Testing_Suite.postman_collection.json -e environments/QA_Environment.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export reports/api-test-report.html --reporter-htmlextra-title \"Restful-Booker API Automation Test Report\" --reporter-htmlextra-darkTheme",
+    "test:api": "npm test",
+    "test:cli": "newman run collections/Restful_Booker_API_Testing_Suite.postman_collection.json -e environments/QA_Environment.postman_environment.json -r cli",
+    "test:report": "start reports/api-test-report.html",
+    "test:ci": "newman run collections/Restful_Booker_API_Testing_Suite.postman_collection.json -e environments/QA_Environment.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export reports/api-test-report.html"
+  },
+  "keywords": [
+    "api-testing",
+    "postman",
+    "newman",
+    "qa-automation",
+    "rest-api",
+    "json-schema",
+    "github-actions",
+    "continuous-integration"
+  ],
+  "author": "QA Automation Engineer",
+  "license": "MIT",
+  "devDependencies": {
+    "newman": "^6.2.2",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}

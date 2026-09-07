@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+
+# Test execution reports (generated artifacts)
+reports/*.html
+reports/*.json
+!reports/.gitkeep
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Operating System & IDE artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary logs & debug outputs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
