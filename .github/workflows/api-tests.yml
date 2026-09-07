@@ -1,0 +1,38 @@
+name: API Automation Test Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  api-tests:
+    name: Run Newman API Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Execute Newman Collection & Generate HTML Report
+        run: |
+          npm run test:ci
+
+      - name: Upload Test Execution Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-api-test-report
+          path: reports/api-test-report.html
+          retention-days: 30
