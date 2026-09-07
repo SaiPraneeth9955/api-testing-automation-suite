@@ -1,0 +1,87 @@
+{
+  "authentication": {
+    "valid": {
+      "username": "admin",
+      "password": "password123"
+    },
+    "invalidCredentials": {
+      "username": "admin",
+      "password": "incorrectPassword999"
+    },
+    "missingFields": {
+      "username": "admin"
+    },
+    "emptyPayload": {}
+  },
+  "bookings": {
+    "standardValid": {
+      "firstname": "Alex",
+      "lastname": "QAEngineer",
+      "totalprice": 250,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-11-01",
+        "checkout": "2026-11-05"
+      },
+      "additionalneeds": "High-speed Wi-Fi"
+    },
+    "fullUpdate": {
+      "firstname": "Alex",
+      "lastname": "LeadQAEngineer",
+      "totalprice": 380,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-11-01",
+        "checkout": "2026-11-07"
+      },
+      "additionalneeds": "Late Checkout & Quiet Room"
+    },
+    "partialUpdate": {
+      "totalprice": 420,
+      "additionalneeds": "Airport Shuttle Service"
+    },
+    "boundaryZeroPrice": {
+      "firstname": "Boundary",
+      "lastname": "ZeroPrice",
+      "totalprice": 0,
+      "depositpaid": false,
+      "bookingdates": {
+        "checkin": "2026-12-01",
+        "checkout": "2026-12-02"
+      },
+      "additionalneeds": "None"
+    },
+    "boundaryLargeString": {
+      "firstname": "Alexandre-Maximilien-The-Third-QA-Specialist",
+      "lastname": "Von-Automation-Testing-Expert-Worldwide",
+      "totalprice": 999999,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-12-15",
+        "checkout": "2026-12-30"
+      },
+      "additionalneeds": "Comprehensive Suite Amenities, Extra Pillows, Balcony View, Airport Pickup, Breakfast Included"
+    },
+    "missingRequiredFields": {
+      "firstname": "IncompleteBooking"
+    },
+    "invalidTypes": {
+      "firstname": 12345,
+      "lastname": false,
+      "totalprice": "one-thousand",
+      "depositpaid": "yes",
+      "bookingdates": {
+        "checkin": "invalid-date",
+        "checkout": "invalid-date"
+      }
+    }
+  },
+  "searchQueries": {
+    "firstname": "Susan",
+    "nonExistentFirstname": "NonExistentQAUser99999"
+  },
+  "invalidResourceIds": {
+    "nonExistentNumericId": 999999999,
+    "nonNumericId": "invalid-alphanumeric-id"
+  }
+}
