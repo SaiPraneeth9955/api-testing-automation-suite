@@ -29,7 +29,7 @@ This audit matrix cross-references every potential QA resume claim against concr
 | **Request Chaining & API Dependencies** | Extracted `authToken` and `chainedBookingId` dynamically and passed them through a 7-step sequence. | Folder 10: Scenarios `[CHAIN-001]` to `[CHAIN-014]` | **YES** |
 | **Automated Newman CLI Execution** | Automated headless execution via Newman with custom scripts (`npm test`, `npm run test:api`). | `package.json` | **YES** |
 | **HTML Test Reporting** | Generated visual, dark-themed HTML test reports with full audit logs using `newman-reporter-htmlextra`. | `reports/api-test-report.html` | **YES** |
-| **CI/CD Automation** | Configured GitHub Actions workflow to run on push/PR, install dependencies, run Newman, and upload artifacts. | `.github/workflows/api-tests.yml` | **CONFIGURED & LOCALLY VERIFIED (Awaiting GitHub Cloud Push)** |
+| **CI/CD Automation** | Configured GitHub Actions workflow to run on push/PR, install dependencies, run Newman, and upload artifacts. | `.github/workflows/api-tests.yml` | **VERIFIED ON GITHUB ACTIONS CI/CD (Run #34155316187 — Success, Report Artifact Uploaded)** |
 | **Failure Propagation** | Verified that assertion failures cause Newman to return exit code 1 and fail the CI job (tested without `--bail`). | Verified empirically via controlled test injection | **YES** |
 | **Defect Tracking & QA Documentation** | Documented real discovered defects (DEF-001, DEF-002, DEF-003) and provided standard defect templates. | `docs/Defect_Log.md` | **YES** |
 | **Manual-to-Automation Traceability** | Documented complete mapping: API Requirement $\rightarrow$ Test Scenario $\rightarrow$ Test Case $\rightarrow$ Assertion $\rightarrow$ Result. | `docs/Test_Cases.md` | **YES** |
